@@ -1,0 +1,25 @@
+body {
+  font-family: 'Asul', 'Roboto', monospace !important;
+  --main-color: #011936;
+  --secondary-color: #ea3694;
+  --primary-font: 'Asul';
+  --secondary-font: 'Roboto';
+  --tertiary-font: 'Lato';
+}
+
+button {
+  height: 50px;
+  width: 215px;
+  border-radius: 25px;
+}
+
+.icon-image,
+.icon-text {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.button-primary {
+  color: #fff;
+  background-color: var(--main-color);
+}

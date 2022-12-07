@@ -1,0 +1,39 @@
+.sidebar-nav {
+  width: 18%;
+  text-align: center;
+  height: calc(100vh - 85px);
+}
+
+.sidebar-button {
+  margin: 35px auto;
+  font-size: 24px;
+  font-weight: 400;
+  font-family: 'Asul', sans-serif;
+}
+
+.sidebar-nav-link {
+  color: var(--main-color);
+  font-size: 26px;
+}
+
+.active.sidebar-nav-link {
+  color: #fff;
+}
+
+.sidebar-nav a {
+  text-decoration: none;
+}
+
+.sidebar-nav div {
+  margin: 0 0 35px 25px;
+  text-align: left;
+}
+
+.sidebar-nav-link .icon-image {
+  margin-right: 18px;
+}
+
+img.icon-image {
+  width: 25px;
+  height: 25px;
+}
