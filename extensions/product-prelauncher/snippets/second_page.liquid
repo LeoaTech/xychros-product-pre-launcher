@@ -1,12 +1,12 @@
-<div class="section-layout {{ block.settings.layout}}">
+<div class="section-layout {{ block.settings.layout }}">
   <div class="announcement">{{ block.settings.announcement_text }}</div>
   {% case block.settings.layout %}
     {% comment %}Start of Horizontal layout{% endcomment %}
   {% when 'horizontal' %}
     <div id='second-background-image' class="img-layout full">
-      <div class="preheader_text">{{ block.settings.preheader_text}}</div>
-      <div class="header_text">{{ block.settings.header_text}}</div>
-      <div class="subheader_text">{{ block.settings.subheader_text}}</div>
+      <div class="preheader_text">{{ block.settings.preheader_text }}</div>
+      <div class="header_text">{{ block.settings.header_text }}</div>
+      <div class="subheader_text">{{ block.settings.subheader_text }}</div>
       <div id="referral-link"></div>
       <div class="socials">
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -31,10 +31,11 @@ viewBox="0 0 24 24">
               <div class="timeline-item-block">
                 <div class="timeline-item" onmouseenter="mouseenter(this)" onmouseleave="mouseleave(this)">6<div class="timeline-item-detail" style="display: none;">Invite 6 friends to unlock this reward!</div>
                 </div>
-                <div class="timeline-item-name" onmouseenter="mouseenterproduct(this)" onmouseleave="mouseleaveproduct(this)">{{ block.settings.icon | image_url: width: 50 |image_tag }}
+                <div class="timeline-item-name" onmouseenter="mouseenterproduct(this)" onmouseleave="mouseleaveproduct(this)">
+                  {% if block.settings.icon %}{{ block.settings.icon | image_url: width: 50 | image_tag }}{% else %}<img src="https://img.icons8.com/ios/100/null/gift-card.png" width="50" height="50" loading="lazy"/>{% endif %}
                   <div class="timeline-contain" style="display: none;">
                     <span>{{ p.title }}</span>
-                    <span>{{ p.featured_image | image_url: width: 50 |image_tag }}</span>
+                    <span>{{ p.featured_image | image_url: width: 50 | image_tag }}</span>
                   </div>
                 </div>
               </div>
@@ -52,9 +53,9 @@ viewBox="0 0 24 24">
     </div>
     <div class="gift-layout half spaced-evenly">
       <div class="vertical spaced">
-        <div class="preheader_text">{{ block.settings.preheader_text}}</div>
-        <div class="header_text">{{ block.settings.header_text}}</div>
-        <div class="subheader_text">{{ block.settings.subheader_text}}</div>
+        <div class="preheader_text">{{ block.settings.preheader_text }}</div>
+        <div class="header_text">{{ block.settings.header_text }}</div>
+        <div class="subheader_text">{{ block.settings.subheader_text }}</div>
         <div id="referral-link"></div>
         <div class="socials"></div>
       </div>
@@ -74,10 +75,10 @@ viewBox="0 0 24 24">
                 <div class="vertical-timeline-item" onmouseenter="mouseenter(this)" onmouseleave="mouseleave(this)">6
                   <div class="vertical-timeline-item-detail" style="display: none;">Invite 6 friends to unlock this reward!</div>
                 </div>
-                <div class="vertical-timeline-item-name" onmouseenter="mouseenterproduct(this)" onmouseleave="mouseleaveproduct(this)">{{ block.settings.icon | image_url: width: 50 |image_tag }}
+                <div class="vertical-timeline-item-name" onmouseenter="mouseenterproduct(this)" onmouseleave="mouseleaveproduct(this)">{% if block.settings.icon %}{{ block.settings.icon | image_url: width: 50 | image_tag }}{% else %}<img src="https://img.icons8.com/ios/100/null/gift-card.png" width="50" height="50" loading="lazy"/>{% endif %}
                   <div class="vertical-timeline-contain" style="display: none;">
                     <span>{{ p.title }}</span>
-                    <span>{{ p.featured_image | image_url: width: 50 |image_tag }}</span>
+                    <span>{{ p.featured_image | image_url: width: 50 | image_tag }}</span>
                   </div>
                 </div>
               </div>
