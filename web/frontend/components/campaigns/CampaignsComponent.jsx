@@ -15,28 +15,38 @@ import { useAuthenticatedFetch, useAppQuery } from '../../hooks';
 export default function CampaignsComponent(props) {
   const fetch = useAuthenticatedFetch();
 
-  const [getCampaigns, setCampaigns] = useState([]);
+  const [getCampaigns, setCampaigns] = useState([
+    {
+      id:1,
+      product_name:"xyz",
+      campaign_name: "abc",
+      product_link: "https://google.com",
+      created_at:"2022-11-12",
+      start_date:"2022-12-12",
+      end_date:"2022-12-23",
+    }
+  ]);
   const [error, setError] = useState('');
 
-  useEffect(() => {
-    fetch('/api/getcampaigns', {
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json' },
-    })
-      .then((response) => {
-        if (response.ok) return response.json();
-        throw new Error('something went wrong while requesting posts');
-      })
-      .then((myCampaigns) => {
-        console.log(myCampaigns);
-        setCampaigns(myCampaigns);
-        return myCampaigns;
-      })
-      .catch((err) => {
-        setError(err.message);
-        return err.message;
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch('/api/getcampaigns', {
+  //     method: 'GET',
+  //     headers: { 'Content-Type': 'application/json' },
+  //   })
+  //     .then((response) => {
+  //       if (response.ok) return response.json();
+  //       throw new Error('something went wrong while requesting posts');
+  //     })
+  //     .then((myCampaigns) => {
+  //       console.log(myCampaigns);
+  //       setCampaigns(myCampaigns);
+  //       return myCampaigns;
+  //     })
+  //     .catch((err) => {
+  //       setError(err.message);
+  //       return err.message;
+  //     });
+  // }, []);
 
   const pageLimit = 3;
   const dataLimit = 10;

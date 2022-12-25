@@ -1,10 +1,11 @@
 body {
-  font-family: 'Asul', 'Roboto', monospace !important;
+  font-family: "Asul", "Roboto", monospace !important;
   --main-color: #011936;
   --secondary-color: #ea3694;
-  --primary-font: 'Asul';
-  --secondary-font: 'Roboto';
-  --tertiary-font: 'Lato';
+  /* --secondary-color: #7289da; */
+  --primary-font: "Asul";
+  --secondary-font: "Roboto";
+  --tertiary-font: "Lato";
 }
 
 button {
