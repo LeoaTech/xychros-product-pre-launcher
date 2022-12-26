@@ -15,7 +15,15 @@
           type="text"
           value="3245hjkjhgfdsfghgffd"
           class="referral-link-inp" />
-        <button class="copy-link-btn">Copy Link</button>
+        <button class="copy-link-btn" onclick="copyToClipboard()">Copy Link</button>
+        <script>
+          function copyToClipboard() {
+            var copyCode = document.getElementById("code");
+            copyCode.select();
+            copyCode.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(copyCode.value);
+          }
+        </script>
       </div>
 
       <div class="socials"></div>
