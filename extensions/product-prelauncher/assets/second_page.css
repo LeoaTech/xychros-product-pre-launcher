@@ -279,3 +279,15 @@ input[value] {
     margin: 2%;
   }
 }
+
+.copy-link-btn {
+  color: white;
+  background: #4A3B2A;
+  border-radius: 5rem;
+  border: none;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  height: 100%;
+  width: 27%;
+}
