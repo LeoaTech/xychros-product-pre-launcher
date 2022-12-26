@@ -16,12 +16,18 @@
           value="3245hjkjhgfdsfghgffd"
           class="referral-link-inp" />
         <button class="copy-link-btn" onclick="copyToClipboard()">Copy Link</button>
+        <div id="snackbar">Copied to clipboard</div>
         <script>
           function copyToClipboard() {
             var copyCode = document.getElementById("code");
             copyCode.select();
             copyCode.setSelectionRange(0, 99999);
             navigator.clipboard.writeText(copyCode.value);
+            var x = document.getElementById("snackbar");
+            x.className = "show";
+            setTimeout(function() {
+              x.className = x.className.replace("show", "");
+            }, 2000);
           }
         </script>
       </div>
