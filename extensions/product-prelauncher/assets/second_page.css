@@ -361,3 +361,15 @@ input[value] {
     opacity: 0;
   }
 }
+
+.socials {
+  display: flex;
+  flex-direction: row;
+}
+
+.socials a>svg {
+  padding: 1rem;
+  width: 3.8rem;
+  cursor: pointer;
+  fill: #4A3B2A;
+}
