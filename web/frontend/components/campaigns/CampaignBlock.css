@@ -11,8 +11,7 @@
   align-items: center;
 }
 
-.campaign-details {
-}
+
 
 .camapign-block-name {
   font-family: 'Asul';
@@ -41,6 +40,7 @@
 
 .campaign-kpis {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
@@ -48,4 +48,23 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+}
+
+.clicks-icon {
+  width: 53px;
+  height: 58px;
+}
+.revenue-icon {
+  width: 43px;
+  height: 46px;
+}
+
+.referral-icon {
+  width: 37px;
+  height: 46px;
+}
+
+.campaign-icon {
+  width: 55px;
+  height: 62px;
 }

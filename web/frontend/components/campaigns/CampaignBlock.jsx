@@ -31,9 +31,9 @@ export default function CampaignBlock(props) {
         </div>
       </div>
       <div className='campaign-kpis'>
-        <ShortSummaryCard value='345' icon={subscriber} class='referral-icon' />
-        <ShortSummaryCard value='$2537' icon={Sale} class='revenue-icon' />
-        <ShortSummaryCard value='4568' icon={magicWand} class='clicks-icon' />
+        <ShortSummaryCard value='345' icon={subscriber} className='referral-icon' />
+        <ShortSummaryCard value='$37' icon={Sale} className='revenue-icon' />
+        <ShortSummaryCard value='4568' icon={magicWand} className='clicks-icon' />
       </div>
       <div className='campaign-actions'>
         <IconContext.Provider

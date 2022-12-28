@@ -52,6 +52,14 @@
   margin-bottom: 10px;
 }
 
+.email-input-product-prelaucher:hover {
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, .4);
+}
+
+input[type='email']:focus {
+  box-shadow: none;
+}
+
 .submit-button-product-prelaunch {
   border-radius: 45px;
   margin: 10px auto;

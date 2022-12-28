@@ -1,20 +1,22 @@
 .summary-card {
-  width: 250px;
+  width: 300px;
   max-height: 100px;
   background: #f5f5f5;
   border: 1px solid #ea3694;
   box-shadow: 0px 4px 4px #ea3694;
+  /* box-shadow: 0px 4px 4px var(--secondary-color); */
   border-radius: 30px;
   margin: 10px 14px;
   display: flex;
   padding: 15px;
   align-items: center;
   justify-content: space-between;
+  gap: 5px;
   flex-wrap: wrap;
 }
 
 .summary-card-value {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-weight: 800;
   font-size: 40px;
   line-height: 48px;
@@ -22,7 +24,7 @@
 }
 
 .summary-card-title {
-  font-family: 'Asul';
+  font-family: "Asul";
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
@@ -35,7 +37,7 @@
 }
 
 .revenue-icon {
-  width: 43px;
+  width: 37px;
   height: 46px;
 }
 
@@ -49,5 +51,46 @@
   height: 62px;
 }
 
-.summary-card-icon {
+@media only screen and (max-width: 1186px) {
+  .summary-card {
+    width: 300px;
+    max-height: 120px;
+
+    padding: 32px;
+  }
+}
+@media only screen and (max-width: 786px) {
+  .summary-card {
+    width: 250px;
+    max-height: 120px;
+
+    padding: 32px;
+  }
+  .summary-card-value {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  .clicks-icon {
+    width: 43px;
+    height: 48px;
+  }
+  
+  .revenue-icon {
+    width: 32px;
+    height: 40px;
+  }
+  
+  .referral-icon {
+    width: 32px;
+    height: 40px;
+  }
+  
+  .campaign-icon {
+    width: 50px;
+    height: 57px;
+  }
+}
+@media only screen and (max-width: 500px) {
 }

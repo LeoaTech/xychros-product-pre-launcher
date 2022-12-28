@@ -99,8 +99,10 @@
     justify-content: center;
     {% if block.settings.text_layout == 'left' %}
       align-items: flex-start;
+      padding: 4vw;
     {% elsif block.settings.text_layout == 'right' %}
       align-items: flex-end;
+      padding: 4vw;
     {% else %}
       align-items: center;
     {% endif %}

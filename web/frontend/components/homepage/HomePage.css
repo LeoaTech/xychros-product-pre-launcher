@@ -2,9 +2,13 @@
   background-color: #fff;
   border-radius: 30px 0 0 0;
   margin-top: 35px;
-  width: 82%;
+  width: 100%;
   min-width: calc(100vw - 250px);
   padding: 10px 40px;
+}
+
+.selected-main.active {
+  width: 95%;
 }
 
 .summary-blocks {
@@ -27,4 +31,64 @@
 .dual-charts div.chart {
   width: 46%;
   margin: 50px 2%;
+}
+
+@media screen and (max-width: 1250px) {
+}
+
+@media only screen and (max-width: 998px) {
+  .selected-main {
+    min-width: 100%;
+    z-index: 0;
+  }
+
+  .selected-main.active {
+    width: 92%;
+  }
+
+  .summary-blocks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .dual-charts {
+    flex-direction: column;
+  }
+  .dual-charts div.chart {
+    width: 98%;
+    margin: 50px 2%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .selected-main {
+    min-width: 100%;
+    z-index: 0;
+  }
+  .summary-blocks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+    /* margin-left: 35px; */
+  }
+
+  .dual-charts {
+    flex-direction: column;
+  }
+  .dual-charts div.chart {
+    width: 98%;
+    margin: 50px 2%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .summary-blocks {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    /* margin-left: 35px; */
+  }
+  .selected-main {
+    width: 100%;
+    overflow: hidden;
+    z-index: 0;
+  }
 }

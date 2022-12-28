@@ -1,30 +1,31 @@
-import SummaryCard from '../ui/SummaryCard';
-import './HomePage.css';
-import MarketingWithSpeaker from '../../assets/MarketingWithSpeaker.png';
-import Sale from '../../assets/Sale.png';
-import magicWand from '../../assets/magicWand.png';
-import subscriber from '../../assets/subscriber.png';
-import Charts from '../ui/Charts';
-
-import React, { useState, useEffect, Fragment } from 'react';
+import SummaryCard from "../ui/SummaryCard";
+import "./HomePage.css";
+import MarketingWithSpeaker from "../../assets/MarketingWithSpeaker.png";
+import Sale from "../../assets/Sale.png";
+import magicWand from "../../assets/magicWand.png";
+import subscriber from "../../assets/subscriber.png";
+import Charts from "../ui/Charts";
+import React, { useState, useEffect, Fragment, useContext } from "react";
 
 /* Import the useAuthenticatedFetch hook included in the Node app template */
-import { useAuthenticatedFetch, useAppQuery } from '../../hooks';
+import { useAuthenticatedFetch, useAppQuery } from "../../hooks";
+import StateContext from "../../context/StateContext";
 
 export default function HomePageComponent(props) {
+  const { activeMenu } = useContext(StateContext);
   const fetch = useAuthenticatedFetch();
 
   const [getCampaigns, setCampaigns] = useState([]);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch('/api/getcampaigns', {
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json' },
+    fetch("/api/getcampaigns", {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
     })
       .then((response) => {
         if (response.ok) return response.json();
-        throw new Error('something went wrong while requesting posts');
+        throw new Error("something went wrong while requesting posts");
       })
       .then((myCampaigns) => {
         console.log(myCampaigns);
@@ -41,7 +42,7 @@ export default function HomePageComponent(props) {
     responsive: true,
     plugins: {
       legend: {
-        position: 'bottom',
+        position: "bottom",
       },
       title: {
         display: false,
@@ -50,25 +51,25 @@ export default function HomePageComponent(props) {
   };
 
   const LineChartData = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [
       {
-        label: 'Referrals',
+        label: "Referrals",
         data: [111, 13, 26, 78],
-        borderColor: '#165BAA',
-        backgroundColor: '#165BAA',
+        borderColor: "#165BAA",
+        backgroundColor: "#165BAA",
       },
       {
-        label: 'Campaigns',
+        label: "Campaigns",
         data: [21, 34, 61, 38],
-        borderColor: '#A155B9',
-        backgroundColor: '#A155B9',
+        borderColor: "#A155B9",
+        backgroundColor: "#A155B9",
       },
       {
-        label: 'Clicks',
+        label: "Clicks",
         data: [45, 23, 42, 99],
-        borderColor: '#F765A3',
-        backgroundColor: '#F765A3',
+        borderColor: "#F765A3",
+        backgroundColor: "#F765A3",
       },
     ],
   };
@@ -77,7 +78,7 @@ export default function HomePageComponent(props) {
     responsive: true,
     plugins: {
       legend: {
-        position: 'right',
+        position: "right",
       },
       title: {
         display: false,
@@ -86,13 +87,13 @@ export default function HomePageComponent(props) {
   };
 
   const DonutChartData = {
-    labels: ['Product 1', 'product 2', 'Product 3', 'Product 4'],
+    labels: ["Product 1", "product 2", "Product 3", "Product 4"],
     datasets: [
       {
-        label: '# of Votes',
+        label: "# of Votes",
         data: [30, 20, 10, 5],
-        backgroundColor: ['#165BAA', '#A155B9', '#F765A3', '#16BFD6'],
-        borderColor: ['#165BAA', '#A155B9', '#F765A3', '#16BFD6'],
+        backgroundColor: ["#165BAA", "#A155B9", "#F765A3", "#16BFD6"],
+        borderColor: ["#165BAA", "#A155B9", "#F765A3", "#16BFD6"],
         borderWidth: 1,
       },
     ],
@@ -102,7 +103,7 @@ export default function HomePageComponent(props) {
     responsive: true,
     plugins: {
       legend: {
-        position: 'bottom',
+        position: "bottom",
       },
       title: {
         display: false,
@@ -111,81 +112,81 @@ export default function HomePageComponent(props) {
   };
 
   const RadarChartData = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [
       {
-        label: 'Referrals',
+        label: "Referrals",
         data: [1, 3, 56, 78, 55, 23, 98],
-        borderColor: '#165BAA',
-        backgroundColor: '#63ABFD',
+        borderColor: "#165BAA",
+        backgroundColor: "#63ABFD",
       },
       {
-        label: 'Revenue',
+        label: "Revenue",
         data: [111, 13, 26, 78, 43, 67, 23],
-        borderColor: '#A155B9',
-        backgroundColor: '#E697FF',
+        borderColor: "#A155B9",
+        backgroundColor: "#E697FF",
       },
       {
-        label: 'Clicks',
+        label: "Clicks",
         data: [45, 23, 42, 99, 55, 189, 265],
-        borderColor: '#F765A3',
-        backgroundColor: '#FFA5CB',
+        borderColor: "#F765A3",
+        backgroundColor: "#FFA5CB",
       },
     ],
   };
 
   return (
-    <div className='selected-main'>
-      <div className='summary-blocks'>
+    <div className={activeMenu ? "selected-main" : "selected-main active"}>
+      <div className="summary-blocks">
         <SummaryCard
           value={getCampaigns.length}
-          title='Campaigns'
+          title="Campaigns"
           icon={MarketingWithSpeaker}
-          class='campaign-icon'
+          class="campaign-icon"
         />
         <SummaryCard
-          value='543678'
-          title='Referrals'
+          value="543678"
+          title="Referrals"
           icon={subscriber}
-          class='referral-icon'
+          class="referral-icon"
         />
         <SummaryCard
-          value='$253,467'
-          title='Revenue'
+          value="$253,467"
+          title="Revenue"
           icon={Sale}
-          class='revenue-icon'
+          class="revenue-icon"
         />
         <SummaryCard
-          value='4551678'
-          title='Clicks'
+          value="4551678"
+          title="Clicks"
           icon={magicWand}
-          class='clicks-icon'
+          class="clicks-icon"
         />
       </div>
-      <div className='single-chart'>
+      <div className="single-chart">
         <Charts
-          type='line'
-          header='Total Revenue'
-          value='$253467'
-          subheader='Last 30 days Data'
+          type="line"
+          header="Total Revenue"
+          value="$253467"
+          subheader="Last 30 days Data"
           LineChartOptions={LineChartOptions}
           LineChartData={LineChartData}
         />
       </div>
-      <div className='dual-charts'>
+      <div className="dual-charts">
         <Charts
-          type='radar'
-          header='Product Launch'
-          value='$2456.76'
-          subheader='August 1st, 2022 - September 5th, 2022'
+          type="radar"
+          header="Product Launch"
+          value="$2456.76"
+          subheader="August 1st, 2022 - September 5th, 2022"
           RadarChartOptions={RadarChartOptions}
           RadarChartData={RadarChartData}
         />
         <Charts
-          type='donut'
-          header='Revenue'
-          value='$15,456.98'
-          subheader='Last 4 campaigns'
+          type="donut"
+          header="Revenue"
+          value="$15,456.98"
+          subheader="Last 4 campaigns"
           DonutChartOptions={DonutChartOptions}
           DonutChartData={DonutChartData}
         />
